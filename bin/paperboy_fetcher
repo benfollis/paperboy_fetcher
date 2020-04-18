@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+from paperboy_fetcher.fetchers.http import fetch
+from paperboy_fetcher.extractors.BBC import extract_article
+#TODO read this from a config file
+#TODO make this handle sub feeds besides top stories
+RSS_URLS = {
+    'BBC': 'http://feeds.bbci.co.uk/news/rss.xml',
+    'CNN': 'http://rss.cnn.com/rss/cnn_topstories.rss',
+    'NYT': 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'
+}
+
+if __name__ == '__main__': # which it will:
+    # TODO, put some arg parsing in and accept multiple things to fetch
+    content = fetch('https://www.bbc.co.uk/news/uk-52339266')
+    article = extract_article(content)
+    print(article)
