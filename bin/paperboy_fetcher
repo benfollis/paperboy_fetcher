@@ -11,6 +11,6 @@ RSS_URLS = {
 
 if __name__ == '__main__': # which it will:
     # TODO, put some arg parsing in and accept multiple things to fetch
-    content = fetch('https://www.bbc.co.uk/news/uk-52339266')
+    content = fetch('https://www.bbc.co.uk/news/world-us-canada-52333932')
     article = extract_article(content)
     print(article)
