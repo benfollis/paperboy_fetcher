@@ -1,16 +1,32 @@
 {
   "feeds": {
-    "BBC": {
-      "top_stories": "http://feeds.bbci.co.uk/news/rss.xml"
-    },
-    "NYT": {
-      "top_stories": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-    },
-    "WAPO": {
-      "world": "http://feeds.washingtonpost.com/rss/world"
-    },
-    "CNN": {
-      "top_stories": "http://rss.cnn.com/rss/cnn_topstories.rss"
-    }
+    "BBC": [
+      {
+        "name": "top_stories",
+        "url": "http://feeds.bbci.co.uk/news/rss.xml",
+        "type": "BBC"
+      }
+    ],
+    "NYT": [
+      {
+        "name": "top_stories",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+        "type": "NYT"
+      }
+    ],
+    "WAPO": [
+      {
+        "name": "world",
+        "url": "http://feeds.washingtonpost.com/rss/world",
+        "type": "WAPO"
+      }
+    ],
+    "CNN": [
+      {
+        "name": "top_stories",
+        "url": "http://rss.cnn.com/rss/cnn_topstories.rss",
+        "type": "CNN"
+      }
+    ]
   }
 }
