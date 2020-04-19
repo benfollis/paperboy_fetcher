@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from paperboy_fetcher.fetchers.http import fetch
-from paperboy_fetcher.extractors.BBC import extract_article
+from paperboy_fetcher.extractors.BBC import extract_article as bbc_extract
+from paperboy_fetcher.extractors.CNN import extract_article as cnn_extract
 #TODO read this from a config file
 #TODO make this handle sub feeds besides top stories
 RSS_URLS = {
@@ -11,6 +12,8 @@ RSS_URLS = {
 
 if __name__ == '__main__': # which it will:
     # TODO, put some arg parsing in and accept multiple things to fetch
-    content = fetch('https://www.bbc.co.uk/news/world-us-canada-52333932')
-    article = extract_article(content)
+    #content = fetch('https://www.bbc.co.uk/news/world-us-canada-52333932')
+    #article = bbc_extract(content)
+    content = fetch('http://rss.cnn.com/~r/rss/cnn_topstories/~3/oaQMlZ0t9uY/index.html')
+    article = cnn_extract(content)
     print(article)
