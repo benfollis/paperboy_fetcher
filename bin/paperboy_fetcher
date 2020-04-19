@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
-from paperboy_fetcher.fetchers.http import fetch
-from paperboy_fetcher.extractors.BBC import extract_article as bbc_extract
-from paperboy_fetcher.extractors.CNN import extract_article as cnn_extract
-from paperboy_fetcher.extractors.NYT import extract_article as nyt_extract
-from paperboy_fetcher.extractors.WAPO import extract_article as wapo_extract
+from paperboy_fetcher.rss.nice_parser import extract_articles
 #TODO read this from a config file
 #TODO make this handle sub feeds besides top stories
 RSS_URLS = {
     'BBC': 'http://feeds.bbci.co.uk/news/rss.xml',
     'CNN': 'http://rss.cnn.com/rss/cnn_topstories.rss',
     'NYT': 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
-    'WAPO': 'ds.washingtonpost.com/rss/world', # WORLD is best feed here, there is no top stories
+    'WAPO': 'http://feeds.washingtonpost.com/rss/world', # WORLD is best feed here, there is no top stories
 }
 
 if __name__ == '__main__': # which it will:
     # TODO, put some arg parsing in and accept multiple things to fetch
+    articles = extract_articles(RSS_URLS['CNN'])
     #content = fetch('https://www.bbc.co.uk/news/world-us-canada-52333932')
     #article = bbc_extract(content)
-    content = fetch('https://www.washingtonpost.com/world/coronavirus-schools-reopen/2020/04/18/0c3dfcb6-7e61-11ea-84c2-0792d8591911_story.html')
-    article = wapo_extract(content)
-    print(article)
+    #content = fetch('https://www.washingtonpost.com/world/coronavirus-schools-reopen/2020/04/18/0c3dfcb6-7e61-11ea-84c2-0792d8591911_story.html')
+    #article = wapo_extract(content)
+    print(articles)
