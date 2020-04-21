@@ -6,6 +6,6 @@ setup(name='paperboy_fetcher',
       author="Ben Follis",
       license="GPLv3",
       packages=['paperboy_fetcher', 'paperboy_fetcher.extractors', 'paperboy_fetcher.fetchers'],
-      install_requires=['feedparser'],
+      install_requires=['feedparser', 'urllib3'],
       zip_safe=False,
       scripts=['bin/paperboy_fetcher'])
