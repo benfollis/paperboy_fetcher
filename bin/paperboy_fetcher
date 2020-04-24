@@ -29,7 +29,7 @@ def download_feed_articles(cwd, type, url):
             article['body'] = content.decode('utf-8')
         except:
             print("Unable to fetch article from " + type + " with link " + link)
-        if content is not None:
+        if article.get('body') is not None:
             print("Saved article from " + type + " with link " + link)
             save_article_file(cwd, article)
 
